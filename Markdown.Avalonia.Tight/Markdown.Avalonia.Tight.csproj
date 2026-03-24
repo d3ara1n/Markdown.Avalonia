@@ -23,10 +23,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\pack_readme\Markdown.Avalonia.Tight.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
   </ItemGroup>
 
