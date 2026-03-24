@@ -52,7 +52,7 @@ namespace Markdown.Avalonia.SyntaxHigh.Extensions
 
             return new MultiBinding()
             {
-                Bindings = new IBinding[] { brush, provider, tag },
+                Bindings = new BindingBase[] { (BindingBase)brush, provider, tag },
                 Converter = new SyntaxHighlightWrapperConverter()
             };
         }

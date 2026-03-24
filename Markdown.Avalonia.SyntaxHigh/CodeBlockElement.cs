@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Input.Platform;
 using Avalonia.Layout;
 using AvaloniaEdit;
 using System;
@@ -57,10 +58,11 @@ namespace Markdown.Avalonia.SyntaxHigh
             txtEdit.HorizontalAlignment = HorizontalAlignment.Stretch;
             txtEdit.IsReadOnly = true;
 
-            copyButton.Click += (s, e) =>
+            copyButton.Click += async (s, e) =>
             {
                 var clipboard = TopLevel.GetTopLevel(txtEdit)?.Clipboard;
-                clipboard?.SetTextAsync(txtEdit.Text);
+                if (clipboard is not null)
+                    await clipboard.SetTextAsync(txtEdit.Text);
             };
 
 
